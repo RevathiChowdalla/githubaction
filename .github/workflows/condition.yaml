@@ -1,4 +1,4 @@
-name: deploy to multiple environment
+name: if condition
 
 on:
   workflow_dispatch:
