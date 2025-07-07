@@ -1,0 +1,22 @@
+name: Loop inside script
+
+on:
+  workflow_dispatch:
+
+jobs:
+  loop-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: loop with condition
+        run: |
+          for env in dev stage prod; do
+            if [ "$env" != "dev" ]; then
+              echo "Deploying to $env"
+            else
+              echo "Skipping $env"
+            fi
+          done
