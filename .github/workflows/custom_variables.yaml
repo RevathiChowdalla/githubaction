@@ -1,0 +1,17 @@
+name: variables
+
+on:
+  workflow_dispatch:
+
+jobs:
+  variables:
+    runs-on: ubuntu-latest
+    env:
+      CUSTOM: "training"
+
+    steps:
+      - name: Print default variables
+        run: printenv
+
+      - name: Print custom varaiable
+        run: echo "custom variable is $CUSTOM"
